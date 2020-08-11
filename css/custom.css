@@ -1,16 +1,31 @@
+/* ------ common ------ */
 h2 {
   color: #1FDED8;
+}
+
+/* ------ passport_details.html ------ */
+.btn-document-scan {
+  border-radius: 10px;
+  height: 40px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin:10px
+  padding: inherit;
+  width: 90px;
+}
+
+.text-page-capture {
+  height: 30px;
+  width: 90px;
+  display:initial !important;
+}
+
+.radio-gender {
+    display:inline-block;
+    padding-right: 100px;
 }
 
 .datepicker {
   background-color: #fff ;
   color: #333 ;
-}
-
-.dropdown {
-  color: yellow;
-}
-
-.wrapper {
-  color: white;
 }

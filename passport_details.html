@@ -1,88 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://v4-alpha.getbootstrap.com/favicon.ico">
+    <title>Passport Details</title>
+    <script src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="http://v4-alpha.getbootstrap.com/examples/navbar-top-fixed/navbar-top-fixed.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/custom.css">
-    <title>Passport Details</title>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </head>
   <body>
-    <div class="container pt-5">
-      <div class="container-fluid shadow-lg rounded pt-4 pb-4" id="wrapper">
+    <div class="container pt-1">
+      <div class="container-fluid shadow-lg rounded pt-4 pb-4">
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-4">
             <h2>Passport Image</h2>
-            <div class="container">
-              <img class="img-fluid" src="img/passport.png" alt="passport">
+            <div class="container border pb-3 pt-3">
+              <img class="img-fluid" src="images/passport.png" alt="passport">
             </div>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-8">
             <h2>Passport Details</h2>
-            <div class="container">
+            <div class="container border pb-3 pt-3">
               <div class="row">
                 <div class="col">
-                  <label for="">First Name</label>
+                  <label for="" class="required mb-1">First Name</label>
                   <input type="text" class="form-control form-control-sm" id="">
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="">Last Name</label>
+                  <label for="" class="required mb-1">Last Name</label>
                   <input type="text" class="form-control form-control-sm" id="">
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="">Passport No</label>
+                  <label for="" class="required mb-1">Passport No</label>
                   <input type="text" class="form-control form-control-sm" id="">
                 </div>
                 <div class="col">
-                  <label for="" class="form-check-label">Gender</label>
-                  <div class="col form-check-inline">
-                    <input type="radio" class="form-check-input" name="optradio" checked>Male
+                  <div class="form-group">
+                    <label class="label required mb-1" for="last_name">Gender</label>
+                    <div class="">
+                      <label class="radio-inline" for="">
+                        <input type="radio" checked="true" name="gender" value=""/>
+                        <span class="radio-gender">Male</span>
+                      </label>
+                      <label class="radio-inline" for="">
+                        <input type="radio" name="gender" value=""/>
+                        <span class="radio-gender">Female</span>
+                      </label>
+                    </div>
                   </div>
-                  <div class="col form-check-inline">
-                    <input type="radio" class="form-check-input" name="optradio">Female
-                  </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="">Date of Birth</label>
-                  <input type="text" class="form-control form-control-sm" id="">
+                  <label for="" class="required mb-1">Date of Birth</label>
+                  <div class="form-group">
+                    <div class='input-group date' id='datepicker'>
+                        <input type='text' class="form-control form-control-sm" onclick="loadpicker()" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                  </div>
                 </div>
                 <div class="col">
-                  <label for="">Issue Date</label>
-                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                  <label for="" class="required mb-1">Issue Date</label>
+                  <div id="date-picker-example" class="datepicker">
                      <input type='text' class="form-control form-control-sm" id='datepicker' onclick="loadpicker()"/>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="">Valid Until</label>
-                  <input type="text" class="form-control form-control-sm" id="">
+                  <label for="" class="required mb-1">Valid Until</label>
+                  <div id="date-picker-example" class="datepicker">
+                     <input type='text' class="form-control form-control-sm" id='datepicker' onclick="loadpicker()"/>
+                  </div>
                 </div>
                 <div class="col">
-                  <label for="">Valid Until (Extended)</label>
-                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                  <label for="" class="required mb-1">Valid Until (Extended)</label>
+                  <div id="date-picker-example" class="datepicker">
                      <input type='text' class="form-control form-control-sm" id='datepicker' onclick="loadpicker()"/>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="">Nationality</label>
+                  <label for="" class="required mb-1">Nationality</label>
                   <select name="countries" class="custom-select">
                     <option selected>Choose Country</option>
                     <option value="ph">Philippines</option>
@@ -92,7 +113,7 @@
                   </select>
                 </div>
                 <div class="col">
-                  <label for="">Country Issue</label>
+                  <label for="" class="required mb-1">Country Issue</label>
                   <select name="countryIssue" class="custom-select">
                     <option selected>Choose Country Issue</option>
                     <option value="ph">Philippines</option>
@@ -104,7 +125,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="">Worker Type</label>
+                  <label for="" class="required mb-1">Worker Type</label>
                   <select name="workerType" class="custom-select">
                     <option selected>Choose Worker Type</option>
                     <option value="ph">Junior Software Engineer</option>
@@ -116,9 +137,33 @@
               </div>
               <div class="row">
                   <div class="col">
-                    <label for="">National ID</label>
+                    <label for="" class="required mb-1">National ID</label>
                     <input type="text" class="form-control form-control-sm" id="">
                   </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <h2>Scan Passport</h2>
+              </div>
+              <div class="row">
+                <div class="container-fluid border pb-3 pt-3">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input mt-2" type="checkbox" value="" id="">
+                        <label for="" class="required">No Passport Document</label>
+                      </div>
+                      <button class="btn btn-secondary btn-document-scan" type="submit">Delete</button>
+                      <button class="btn btn-danger btn-document-scan" type="submit">Scan</button>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-8">
+                      <label for="">Total Page Capture:</label>
+                      <input type="number" class="form-control text-page-capture mt-2" id="">
+                      <p class="text-muted"><small>*Please scan for second page that contain MZR code</small></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
