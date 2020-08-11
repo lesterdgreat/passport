@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Passport Details</title>
+  </head>
+  <body>
+    <div class="container pt-5">
+      <div class="container-fluid shadow-lg rounded pt-4 pb-4" id="wrapper">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <h2>Passport Image</h2>
+            <div class="container">
+              <img class="img-fluid" src="img/passport.png" alt="passport">
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-8">
+            <h2>Passport Details</h2>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <label for="">First Name</label>
+                  <input type="text" class="form-control form-control-sm" id="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="">Last Name</label>
+                  <input type="text" class="form-control form-control-sm" id="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="">Passport No</label>
+                  <input type="text" class="form-control form-control-sm" id="">
+                </div>
+                <div class="col">
+                  <label for="" class="form-check-label">Gender</label>
+                  <div class="col form-check-inline">
+                    <input type="radio" class="form-check-input" name="optradio" checked>Male
+                  </div>
+                  <div class="col form-check-inline">
+                    <input type="radio" class="form-check-input" name="optradio">Female
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="">Date of Birth</label>
+                  <input type="text" class="form-control form-control-sm" id="">
+                </div>
+                <div class="col">
+                  <label for="">Issue Date</label>
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                     <input type='text' class="form-control form-control-sm" id='datepicker' onclick="loadpicker()"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="">Valid Until</label>
+                  <input type="text" class="form-control form-control-sm" id="">
+                </div>
+                <div class="col">
+                  <label for="">Valid Until (Extended)</label>
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                     <input type='text' class="form-control form-control-sm" id='datepicker' onclick="loadpicker()"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="">Nationality</label>
+                  <select name="countries" class="custom-select">
+                    <option selected>Choose Country</option>
+                    <option value="ph">Philippines</option>
+                    <option value="my">Malaysia</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="hk">Hongkong</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="">Country Issue</label>
+                  <select name="countryIssue" class="custom-select">
+                    <option selected>Choose Country Issue</option>
+                    <option value="ph">Philippines</option>
+                    <option value="my">Malaysia</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="hk">Hongkong</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="">Worker Type</label>
+                  <select name="workerType" class="custom-select">
+                    <option selected>Choose Worker Type</option>
+                    <option value="ph">Junior Software Engineer</option>
+                    <option value="my">Junior Software Consultant</option>
+                    <option value="nz">Architect</option>
+                    <option value="hk">System Analyst</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <label for="">National ID</label>
+                    <input type="text" class="form-control form-control-sm" id="">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
